@@ -15,9 +15,8 @@
                         junit '**/*xml'
                     }
                 }
-        }
-     
-     tage('robot') {
+     }
+     stage('robot') {
             steps {
                 sh 'robot -d results --variable BROWSER:headlesschrome car.robot'
             }
