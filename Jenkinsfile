@@ -8,7 +8,7 @@
         }
      stage('newman') {
             steps {
-                sh 'newman run AZ.Restful Booker.postman_collection.json --environment AZ.Restful Booker.postman_environment.json --reporters junit'
+                sh 'newman run AZ.Restful_Booker.postman_collection.json --environment AZ.Restful_Booker.postman_environment.json --reporters junit'
             }
             post {
                 always {
