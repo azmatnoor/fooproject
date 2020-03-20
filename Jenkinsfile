@@ -19,6 +19,7 @@
      stage('robot') {
             steps {
                 sh 'robot -d Results --variable BROWSER:headlesschrome infotiveCarRental.robot'
+             sh 'robot -d Results --variable BROWSER:headlesschrome keywords.robot'
             }
             post {
                 always {
