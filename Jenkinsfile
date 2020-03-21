@@ -6,6 +6,24 @@
                 git 'https://github.com/azmatnoor/fooproject.git'
             }
         }
+     
+     stage('junit build') {
+            steps {
+                sh "mvn compile"
+            }
+        }
+        stage('junit test') {
+            steps {
+                sh "mvn test"
+            }
+        }
+     
+     stage( ' Create coverage report'){
+      steps{ 
+       sh " mvn cobertura:cobertura"
+      }
+     }
+     
      stage('newman') {
             steps {
                 sh 'newman run AZ.Restful_Booker.postman_collection.json --environment AZ.Restful_Booker.postman_environment.json --reporters junit'
@@ -43,6 +61,16 @@
         }
    
     }
+  psot{
+   always{
+             junit '**/TEST*.xml'
+            emailext attachLog: true, attachmentsPattern: '**/TEST*xml',
+            body: 'Bod-DAy!', recipientProviders: [culprits()], subject:
+            '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!' 
+   
+   
+   }
+  }
 }
  
  
