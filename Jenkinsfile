@@ -7,20 +7,16 @@
             }
         }
      
-     stage('junit build') {
+     stage('Build') {
             steps {
                 sh "mvn compile"
             }
         }
-        stage('junit test') {
+       stage('Test') {
             steps {
                 sh "mvn test"
             }
-            post {
-                always {
-                    junit '**/TEST*.xml'
-                }
-            }
+
         }
      
      stage('newman') {
