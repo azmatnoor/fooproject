@@ -35,7 +35,7 @@
      }
      stage('robot') {
             steps {
-                sh 'robot -d Results --variable BROWSER:headlesschrome infotiveCarRental.robot'
+               sh 'robot -d results --variable BROWSER:headlesschrome  infotiveCarRental.robot'
              
             }
             post {
@@ -54,7 +54,7 @@
                                   otherFiles          : "**/*.png,**/*.jpg",
                                 ]
                            )
-                             chuckNorris()
+                             
                     }
                 }
             }
@@ -64,9 +64,10 @@
   post {
          always {
             junit '**/TEST*.xml'
-            emailext attachLog: true, attachmentsPattern: '**/TEST*xml',
-            body: 'Bod-DAy!', recipientProviders: [culprits()], subject:
-            '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!'
+      
+          emailext attachLog: true, attachmentsPattern: '**/TEST*xml', body: '', recipientProviders: [culprits()], subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!'
+
+          
          }
     }
 }
