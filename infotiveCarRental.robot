@@ -1,6 +1,6 @@
 *** Setting ***
 Documentation       Information about the Test Suite
-Resource            ../Resource/keywords.robot
+Resource            keywords.robot
 Library             SeleniumLibrary
 
 
