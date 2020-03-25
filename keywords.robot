@@ -10,7 +10,7 @@ Begin Web Test
         Load Page
         Verify Page Loaded
 Load Page
-        Go To                          http://rental11.infotiv.net/
+        Go To                          http://rental23.infotiv.net/
 
 Verify Page Loaded
         Wait Until Page Contains        Infotiv Car Rental
