@@ -72,7 +72,7 @@ Booking Car
         Click Button                         xpath://*[@id="ms-list-2"]/button
         Select Checkbox                      id:ms-opt-5
         Click Element                        id:rightpane
-        Sleep                                2s
+        Wait Until Element Exists            id:carSelect1
         Click Element                        id:carSelect1
         ${pickup_date} =                    Get Text                id:startDate
         Should Be Equal                     ${pickup_date}          Pickup date: 2020-03-27
