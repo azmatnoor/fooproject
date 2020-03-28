@@ -65,26 +65,7 @@ Selecting Date
         Sleep                                3s
         Click Button                        id:continue
 
-Booking Car
 
-        Click Button                         xpath://*[@id="ms-list-1"]/button
-        Select Checkbox                      id:ms-opt-1
-        Click Button                         xpath://*[@id="ms-list-2"]/button
-        Select Checkbox                      id:ms-opt-6
-        Click Element                        id:rightpane
-        Sleep                                2s
-        Click Element                        id:carSelect1
-        ${pickup_date} =                     Get Text                id:startDate
-        Should Be Equal                      ${pickup_date}          Pickup date: 2020-03-28
-        ${return_date} =                     Get Text                id:endDate
-        Should Be Equal                      ${return_date}          Return date: 2020-03-30
-        Input Text                          id:cardNum              1234234534564567
-        Input Text                          id:fullName             M Farooqi
-        Select From List By Index           xpath://*[@id="confirmSelection"]/form/select[1]    2
-        Select From List By Index           xpath://*[@id="confirmSelection"]/form/select[2]    5
-        Input Text                          id:cvc               786
-        Click Button                        id:confirm
-        Wait Until Page Contains            now ready for pickup
 
 
 
