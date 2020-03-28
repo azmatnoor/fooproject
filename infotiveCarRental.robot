@@ -56,13 +56,5 @@ Selecting Date
 
 
 
-Booking Car
-
-        [Documentation]             Testing to book a car
-        [Tags]                      Test 6 Booking of a car
-
-        Selecting Date
-        User Login
-        Booking Car
 
 
